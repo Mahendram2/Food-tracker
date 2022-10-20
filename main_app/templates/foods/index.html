@@ -1,0 +1,84 @@
+
+{% extends 'base.html' %} 
+
+{% block title %}
+Foods Log | Calories Counter
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col s8">
+        <div class="card">
+            <div class="card-content">
+                <h1>Food Log</h1>
+                <p>Foods consumed so far Today</p>
+            </div>
+        </div>
+    </div>
+    <div class="col s4">
+        <div class="card">
+            <div class="card-content">
+                <h6>Totals</h6>
+                <ul>Calories: {{ data.calories__sum }} kj</ul>
+                <ul>Protein: {{ data.protein__sum }} g</ul>
+                <ul>Carbs: {{ data.carbohydrates__sum }} g</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s8">
+        <div class="card">
+            <div class="card-content">
+                <table id="table" class="highlight">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Calories</th>
+                            <th>Protein</th>
+                            <th>Carbs</th>
+                            <th>Fats</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for food in foods %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'foods_detail' food.id %}">
+                                    {{ food.name }}
+                                </a>
+                            </td>
+                            <td> {{ food.calories }} kj </td>
+                            <td> {{ food.protein }} g</td>
+                            <td> {{ food.carbohydrates }} g</td>
+                            <td> {{ food.fat }} g</td>
+                            <td> 
+                                <a href="{% url 'foods_update' food.id %}">
+                                    <span class="text-gradient"><i class="fa fa-pencil"></i></span>
+                                </a>
+                                   
+                                <a href="{% url 'foods_delete' food.id %}">
+                                <span class="text-gradient"><i class="fa fa-trash"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col s4">
+        <div class="card">
+            <div>
+                <h3>Pie Chart Future Spot</h3>
+                <canvas id="myChart"></canvas>
+              </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+  </head>
+  <body>
+    <header class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper green lighten-3">
+          <ul>
+            <li>
+              <a href="{% url 'home'%}" class="left brand-logo">Calories Counter</a>
+            </li>
+          </ul>
+          <ul class="right">
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'api' %}">Food Look Up</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'foods_index' %}">Food Log</a></li>
+            <li><a href="{% url 'foods_create' %}">Add Food</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'signup' %}">Signup</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container ">{% block content %} {% endblock %}</main>
+    <footer class="page-footer green lighten-3">
+      <div class="mid center">
+      Created by <a href="https://www.linkedin.com/in/mahendra-mishra-85b351222/" target="_blank">Mahendra </a> | All Rights Reserved | © 2022 Calories Counter  
+      </div>
+    </footer>
+  </body>
+</html>
