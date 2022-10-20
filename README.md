@@ -22,7 +22,7 @@ FULL CRUD Python Django App
 
 ## Getting Started
 
-- Click here to see the deployed app
+Click here](https://caloriescounter-22.herokuapp.com/) to see the deployed app!
 
 ## Future Enhancements
 
