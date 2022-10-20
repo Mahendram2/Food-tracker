@@ -16,8 +16,8 @@ FULL CRUD Python Django App
 - API Ninja's Nutrition API
 
 ## Screenshot
-![Alt text](/src/img/screen-home.png)
-![Alt text](/src/img/screen-create.png)
+![Alt text](https://i.ibb.co/qMQR2Qt/Screen-Shot-2022-10-20-at-8-18-07-AM.png)
+![Alt text](https://i.ibb.co/C1q0Gg8/Screen-Shot-2022-10-20-at-8-25-36-AM.png)
 ![Alt text](/src/img/screen-show.png)
 
 ## Getting Started
@@ -27,3 +27,4 @@ FULL CRUD Python Django App
 ## Future Enhancements
 
 - In near future, pie chart will be added to food log where user will be able to see 
+- Weight tracker will be aviable for User to track their weight.
