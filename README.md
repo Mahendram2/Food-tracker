@@ -18,7 +18,6 @@ FULL CRUD Python Django App
 ## Screenshot
 ![Alt text](https://i.ibb.co/qMQR2Qt/Screen-Shot-2022-10-20-at-8-18-07-AM.png)
 ![Alt text](https://i.ibb.co/C1q0Gg8/Screen-Shot-2022-10-20-at-8-25-36-AM.png)
-![Alt text](/src/img/screen-show.png)
 
 ## Getting Started
 
